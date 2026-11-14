@@ -4,6 +4,7 @@ import android.app.Application
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
 import android.widget.RemoteViews
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
@@ -37,7 +38,7 @@ class AuroraWidget(private val kind: String) : GlanceAppWidget() {
         provideContent {
             val p = palette(Store.cfg(kind)); val w = wContent(kind); val big = kind in listOf("clock", "date", "battery", "countdown")
             Box(GlanceModifier.fillMaxSize().background(p.bg).cornerRadius(26.dp).padding(14.dp)
-                .clickable(actionStartActivity<MainActivity>()), contentAlignment = Alignment.CenterStart) {
+                .clickable(actionStartActivity(Intent(context, MainActivity::class.java))), contentAlignment = Alignment.CenterStart) {
                 if (kind == "clock") {
                     val rv = RemoteViews(context.packageName, R.layout.w_clock).apply {
                         setTextColor(R.id.tc_day, p.ac.toArgb()); setTextColor(R.id.tc_time, p.fg.toArgb())
