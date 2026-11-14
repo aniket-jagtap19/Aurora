@@ -1,0 +1,11 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+    <TextClock android:id="@+id/tc_day" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:format12Hour="EEEE" android:format24Hour="EEEE" android:textSize="11sp" android:textStyle="bold"
+        android:textAllCaps="true" android:letterSpacing="0.1" />
+    <TextClock android:id="@+id/tc_time" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:format12Hour="h:mm" android:format24Hour="HH:mm" android:textSize="36sp" android:textStyle="bold"
+        android:includeFontPadding="false" />
+    <TextClock android:id="@+id/tc_date" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:format12Hour="d MMMM" android:format24Hour="d MMMM" android:textSize="12sp" />
+</LinearLayout>
